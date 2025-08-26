@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "InfiniteDungeon": {
+      "address": "0xe8addd62fed354203d079926a8e563bc1a7fe81e",
+      "startBlock": 0
+    }
+  }
+}
