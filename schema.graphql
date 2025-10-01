@@ -85,3 +85,22 @@ type WarriorPurchased @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type MineGame @entity(immutable: true) {
+  id: Bytes!
+  gameId: BigInt! # uint256
+  player: Bytes! # address
+  stake: BigInt! # uint256
+  tableDimension: Int! # uint8
+  cumMul: BigInt! # uint256
+  remainingCells: Int! # uint256
+  remainingMines: Int! # uint256
+  steps: Int! # uint256
+  active: Boolean! # bool
+  vrfPending: Boolean! # bool
+  vrfRequestId: BigInt! # uint256
+  isMine: Boolean! # bool
+  revealedCells: [Int!]! # uint32[]
+  cashedOut: Boolean! # bool
+  cashoutAmount: BigInt! # uint256
+}
