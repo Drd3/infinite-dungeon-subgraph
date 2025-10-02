@@ -86,13 +86,13 @@ type WarriorPurchased @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
-type MineGame @entity(immutable: true) {
+type MineGame @entity (immutable: false) {
   id: Bytes!
   gameId: BigInt! # uint256
   player: Bytes! # address
   stake: BigInt! # uint256
   tableDimension: Int! # uint8
-  cumMul: BigInt! # uint256
+  cumMul: BigDecimal! # uint256
   remainingCells: Int! # uint256
   remainingMines: Int! # uint256
   steps: Int! # uint256
@@ -101,6 +101,7 @@ type MineGame @entity(immutable: true) {
   vrfRequestId: BigInt! # uint256
   isMine: Boolean! # bool
   revealedCells: [Int!]! # uint32[]
+  pendingCell: Int!
   cashedOut: Boolean! # bool
-  cashoutAmount: BigInt! # uint256
+  cashoutAmount: BigDecimal! # uint256
 }

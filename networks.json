@@ -3,6 +3,10 @@
     "InfiniteDungeon": {
       "address": "0xe8addd62fed354203d079926a8e563bc1a7fe81e",
       "startBlock": 0
+    },
+    "MinesGame": {
+      "address": "0x8ac5ee52f70ae01db914be459d8b3d50126fd6ae",
+      "startBlock": 0
     }
   }
 }
