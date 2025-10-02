@@ -68,8 +68,10 @@ dataSources:
       eventHandlers:
         - event: GameCreated(indexed address,indexed uint64,uint256,uint256,uint256)
           handler: handleGameCreated
-        - event: CellResolved(indexed uint64,uint32)
+        - event: CellResolved(indexed address,indexed uint64,uint256,bool,uint256,uint256,uint256)
           handler: handleCellResolved
         - event: CommitCell(indexed address,indexed uint64,uint256,uint256)
           handler: handleCommitCell
+        - event: CashedOut(indexed address,indexed uint64,uint256)
+          handler: handleCashedOut
       file: ./src/mines-game.ts
