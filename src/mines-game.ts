@@ -61,6 +61,7 @@ export function handleCommitCell(event: CommitCell): void {
   let entity = getOrCreateMineGame(id);
 
   entity.vrfPending = true;
+  entity.vrfRequestId = event.params.requestId;
   entity.pendingCell = event.params.cellIndex.toI32();
   entity.save();
 }
@@ -71,10 +72,11 @@ export function handleCellResolved(event: CellResolved): void {
   let entity = getOrCreateMineGame(id);
 
   entity.isMine = event.params.isMine;
+  entity.active = event.params.isMine;
   entity.vrfPending = false;
   entity.cumMul = event.params.cumMulWad.toBigDecimal().div(BigDecimal.fromString("1000000000000000000"));
   entity.vrfRequestId = BigInt.zero();
-  entity.revealedCells.push(entity.pendingCell);
+  entity.revealedCells.push(event.params.cellIndex.toI32());
   entity.pendingCell = -1;
   entity.save();
 }

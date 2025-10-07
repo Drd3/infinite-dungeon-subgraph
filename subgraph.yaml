@@ -53,7 +53,7 @@ dataSources:
     name: MinesGame
     network: mainnet
     source:
-      address: "0x8ac5ee52f70ae01db914be459d8b3d50126fd6ae"
+      address: "0x313f922be1649cec058ec0f076664500c78bdc0b"
       abi: MinesGame
       startBlock: 0
     mapping:
