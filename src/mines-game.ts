@@ -72,11 +72,13 @@ export function handleCellResolved(event: CellResolved): void {
   let entity = getOrCreateMineGame(id);
 
   entity.isMine = event.params.isMine;
-  entity.active = event.params.isMine;
+  entity.active = !event.params.isMine;
   entity.vrfPending = false;
   entity.cumMul = event.params.cumMulWad.toBigDecimal().div(BigDecimal.fromString("1000000000000000000"));
   entity.vrfRequestId = BigInt.zero();
-  entity.revealedCells.push(event.params.cellIndex.toI32());
+  let revealed = entity.revealedCells;
+  revealed.push(event.params.cellIndex.toI32());
+  entity.revealedCells = revealed;
   entity.pendingCell = -1;
   entity.save();
 }
